@@ -11,10 +11,13 @@
 
 
 def alphabetic_order(frase)
+
 	sorted_array = frase.gsub(/\W/," ").split.sort
-	final_array = sorted_array.sort do |a , b| a.upcase <=> b.upcase end
+
+	final_array = sorted_array.sort { |a , b| a.upcase <=> b.upcase }
+
 	puts "#{frase} => #{final_array}" 
+
 end
 
-alphabetic_order("Me muero, lentamente.")
 alphabetic_order("Desde aqui se ve muy bien el mar!!!")
