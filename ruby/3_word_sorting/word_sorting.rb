@@ -7,12 +7,12 @@
 #--------
 # El método sort tiene en cuenta si las palabras contienen mayúsculas (siendo estas colocadas en primer lugar)
 # por lo que para hacer insensible a ls mayusculas la comparación se debe introducir un parámetro de comparación 
-# Sobre diferentes parámetro de comparación ver --------- http://www.evc-cit.info/cit020/beginning-programming/chp_07/custom_sort.html
+# Sobre diferentes parámetros de comparación ver --------- http://www.evc-cit.info/cit020/beginning-programming/chp_07/custom_sort.html
 
 
 def alphabetic_order(frase)
 
-	sorted_array = frase.gsub(/\W/," ").split.sort
+	sorted_array = frase.gsub(/\W/," ").split
 
 	final_array = sorted_array.sort { |a , b| a.upcase <=> b.upcase }
 
