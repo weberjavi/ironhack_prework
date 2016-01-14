@@ -2,6 +2,9 @@ class ShoppingCart
   def initialize
     @items = []
   end
+  def add_item(item)
+      @items.push(item.price)
+  end
 end
 
 class Item
@@ -36,11 +39,18 @@ class Houseware < Item
       	else
       		return @price
   		end
+	end
 end
 
-banana = Fruit.new("Banana",3)
-hammer = Houseware.new("Hammer",112)
-hammer.price
+
+banana = Fruit.new("Banana", 10)
+orange_juice = Item.new("Orange Juice", 10)
+rice = Item.new("Rice", 1)
+vacuum_cleaner = Houseware.new("Vacuum Cleaner", 150)
+anchovies = Item.new("Anchovies", 2)
+
 banana.price
-banana.inspect
-hammer.inspect
+orange_juice.price
+rice.price
+vacuum_cleaner.price
+anchovies.price
