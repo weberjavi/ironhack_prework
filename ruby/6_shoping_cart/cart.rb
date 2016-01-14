@@ -1,10 +1,19 @@
 class ShoppingCart
-  def initialize
-    @items = []
-  end
-  def add_item(item)
-      @items.push(item.price)
-  end
+  	def initialize
+    	@items = []
+  	end
+
+  	def add_item(item)
+      	@items.push(item.price)
+  	end
+
+  	def checkout
+  		final_price = 0
+  		@items.each do |i|
+  			final_price += i
+  		end
+  		return final_price
+  	end
 end
 
 class Item
@@ -12,6 +21,7 @@ class Item
 		@name = name
 		@price = price
 	end
+
 	def price
 		return @price
 	end
@@ -44,13 +54,17 @@ end
 
 
 banana = Fruit.new("Banana", 10)
-orange_juice = Item.new("Orange Juice", 10)
+oj = Item.new("Orange Juice", 10)
 rice = Item.new("Rice", 1)
-vacuum_cleaner = Houseware.new("Vacuum Cleaner", 150)
+vacuum = Houseware.new("Vacuum Cleaner", 150)
 anchovies = Item.new("Anchovies", 2)
 
-banana.price
-orange_juice.price
-rice.price
-vacuum_cleaner.price
-anchovies.price
+cart = ShoppingCart.new
+cart.add_item(rice)
+cart.add_item(oj)
+cart.add_item(oj)
+cart.add_item(vacuum)
+cart.add_item(banana)
+
+puts cart.inspect
+puts cart.checkout
