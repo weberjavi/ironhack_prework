@@ -12,7 +12,11 @@ class ShoppingCart
   		@items.each do |i|
   			final_price += i
   		end
-  		return final_price
+  		if @items.length > 5
+  			return final_price = final_price - final_price * 0.05
+  		else
+  			return final_price
+  		end
   	end
 end
 
@@ -64,6 +68,7 @@ cart.add_item(rice)
 cart.add_item(oj)
 cart.add_item(oj)
 cart.add_item(vacuum)
+cart.add_item(banana)
 cart.add_item(banana)
 
 puts cart.inspect
