@@ -1,0 +1,174 @@
+/*--------------
+Cambio del modelo del content-box aplicado por defecto
+a border-box, de esta manera los bordes y paddings se aplicarán 
+dentro de la medida total determinada para el elemento
+---------------*/
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+/* Esta regla obliga a las imágenes a adaptarse al tamaño de su contenedor*/
+img{
+	max-width: 100%;
+}
+body{
+	font-family: arial, sans-serif;
+}
+.main{
+	width: 600px;
+    position: relative;
+    margin: 0 auto;
+    top: 22%;
+}
+.logo{
+	width: 270px;
+    position: relative;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%)
+}
+.gris{
+	color: #a6a6a6;
+}
+.avatar{
+	width: 35px;
+	border-radius: 30px;
+	vertical-align: middle;
+}
+.bell, .menu{
+	vertical-align: middle;
+	width: 20px;
+	cursor: pointer;
+}
+.bell:hover{
+	color-fill:#fff;
+}
+input[type=text]{
+	width: 585px;
+	height: 40px;
+	margin: 20 auto;
+	border: 1px solid lightgrey;
+	padding: 8px;
+}
+input[type="text"]:focus {
+    border: 1px solid #3396e8 ;
+    outline: none;
+}
+.micro{
+	width: 15px;
+    position: absolute;
+    right: 25px;
+    top: 119;
+}
+nav ul{
+	list-style: none;
+	float: right;
+	margin: 20px 30px 0 0;
+	font-size: 13px;
+}
+nav ul li{
+	display: inline;
+	padding-left: 15px;
+}
+nav ul li a{
+	color: #333;
+	text-decoration: none;
+}
+.button_container{
+	width: 350px;
+	margin:0 auto;
+}
+button{
+	width: 155px;
+	height: 36px;
+    line-height: 27px;
+	background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+	background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    color: #757575;
+    cursor: default;
+    font-family: arial,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 11px 4px;
+    min-width: 54px;
+    padding: 0 16px;
+    text-align: center;
+}
+button:hover{
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#f1f1f1));
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-color: #f8f8f8;
+    background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-image: -o-linear-gradient(top,#f8f8f8,#f1f1f1);
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #222;
+}
+.idiomas{
+	width: 350px;
+	font-size: 13px;
+	margin: 10 auto;
+    text-align: center;
+}
+.idiomas a{
+	padding: 0 3px;
+	color: #1a0dab;
+	text-decoration: none;
+}
+a:visited {
+    color: #609;
+}
+a:hover, a:active {
+    text-decoration: underline;
+}
+footer{
+	height: 40px;
+	background: #f2f2f2;
+    border-top: 1px solid #e4e4e4;
+    min-width: 980px;
+    bottom: 3px;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+footer ul{
+	list-style: none;
+	font-size: 13px;
+}
+footer a{
+	text-decoration: none;
+	color: #666;
+}
+.izq{
+	padding-right: 27px;
+	float: left;
+	display: inline;
+}
+.dcha{
+	padding-left: 27px;
+	float: right;
+	display: inline;
+}
+.dcha_total{
+	margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
