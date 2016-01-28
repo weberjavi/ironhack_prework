@@ -23,7 +23,7 @@ function dniLetter( dni ) {
   var num = ('' + dni).length === 8 ? dni % 23 : 'invalid'
 
   if (num >= 0 && num <= 22) {
-    result = lockup.charAt(dni);
+    result = lockup.charAt(num);
     return result;
   } else {
     return 'Invalid parameter'
