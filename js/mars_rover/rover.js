@@ -1,8 +1,9 @@
+//Este objeto determina el nombre, posición inicial y dirección inicial del vehículo
 var myRover = {
   position: [0,0],
   direction: 'N'
 };
-
+//Funciones que definen movimientos y direcciones partiendo de los parámetros del rover previos
 function goForward(rover) {
   switch(rover.direction) {
     case 'N':
@@ -18,9 +19,18 @@ function goForward(rover) {
       rover.position[0]--
       break;
   };
+
+  if (myRover.position[0] < 0){
+    myRover.position[0] = 9;
+  } else if (myRover.position[0] > 9){
+    myRover.position[0] = 0;
+  } else if (myRover.position[1] < 0){
+    myRover.position[1] = 9;
+  } else if (myRover.position[1] > 9){
+    myRover.position[1] = 0;
+  }
 console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
 }
-
 
 function goBackward(rover) {
   switch (rover.direction) {
@@ -37,8 +47,19 @@ function goBackward(rover) {
       rover.position[0]++
     break;
   };
+
+  if (myRover.position[0] < 0){
+    myRover.position[0] = 9;
+  } else if (myRover.position[0] > 9){
+    myRover.position[0] = 0;
+  } else if (myRover.position[1] < 0){
+    myRover.position[1] = 9;
+  } else if (myRover.position[1] > 9){
+    myRover.position[1] = 0;
+  }
   console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
 }
+
 function turnRight(rover){
   switch (rover.direction) {
     case "N" :
@@ -76,16 +97,20 @@ function turnLeft(rover) {
 }
 
 
-goForward(myRover);
-goForward(myRover);
-goForward(myRover);
-goBackward(myRover);
-turnRight(myRover);
-turnRight(myRover);
-turnLeft(myRover);
+//En este objeto guardamos las funciones de movimiento creadas previamente 
+//Otorgamos una clave (key) que hace referencia a los comandos introducidos (en la variable string)
+//El valor (value) es el nombre de la función que ejecutaremos 
+//Para ejecutar las funciones debemos introducirle el parámetro (vehículo que queremos mover) en el for loop
+var moveFunctions = {
+  "f": goForward,
+  "b": goBackward,
+  "l": turnLeft,
+  "r": turnRight
+}
 
-/*En este array guardamos el damero que sireve como espacio para los movimientos del rover*/
-/*var damero = [];
+
+//En este array guardamos el damero que sirve como espacio para los movimientos del rover
+var damero = [];
 for(var x = 0; x < 10; x++){
     damero[x] = [];    
     for(var y = 0; y < 10; y++){ 
@@ -94,60 +119,28 @@ for(var x = 0; x < 10; x++){
 }
 
 
+//Aquí determinamos los espacios del damero en los que habrá un objeto
+damero[1][0] = "stone";
+damero[0][1] = "stone";
+damero[0][9] = "stone";
 
-damero[2][1] = "stone";
-console.log(damero[1][1]);
+//
+var string = "ffflffrrbbbf";
+var actions = string.toLowerCase().split("");
 
-
+for(var i = 0; i < actions.length; i++){
+  var orden = actions[i];
+  moveFunctions[orden](myRover);
+}
 
 
 function crash(damero){
-  if (damero == "stone" ) {
+  if (damero[myRover.position[0], myRover.position[1]] == "stone" ) {
     console.log("watch out you hit a " + damero)
   } else{
     console.log("you are in position " + damero)
   }
 }
-crash(damero[2][1]);
-crash(damero[1][1]);
 
 
-
-
-function position(damero){
-  var positionN = [];
-  var arrayString = damero.split(",");
-  for (var i = 0 ; i < arrayString.length; i++){
-    arrayString[i] = Number(arrayString[i]);
-    positionN.push(arrayString[i]);
-  }
-  myRover.position = positionN ;
-}
-position(damero[1][1]);
-console.log(myRover.position);
-
-
-
-var string = "ffflffrrb";
-
-var actions = string.toLowerCase().split("");
-
-for(var i = 0, l = actions.length; i < l; i++){
-  var fName = actions[i];
-  return function fName()
-}
-
-function f(){
-  console.log("funcion f")
-}
-function l(){
-  console.log("funcion l")
-}
-function r(){
-  console.log("funcion r")
-}
-
-function b(){
-  console.log("funcion b")
-}*/
 
