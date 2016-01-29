@@ -108,39 +108,45 @@ var moveFunctions = {
   "r": turnRight
 }
 
-
-//En este array guardamos el damero que sirve como espacio para los movimientos del rover
-var damero = [];
-for(var x = 0; x < 10; x++){
-    damero[x] = [];    
-    for(var y = 0; y < 10; y++){ 
-        damero[x][y] = x + "," + y  ;    
-    }    
+var objetos ={
+  [0,3] : "stone",
+  [7,3] : "stone",
+  [1,3] : "stone"
 }
 
 
+
+//En este array guardamos el damero que sirve como espacio para los movimientos del rover
+// var damero = [];
+// for(var x = 0; x < 10; x++){
+//     damero[x] = [];    
+//     for(var y = 0; y < 10; y++){ 
+//         damero[x][y] = x + "," + y  ;    
+//     }    
+// }
+
 //Aquí determinamos los espacios del damero en los que habrá un objeto
-damero[1][0] = "stone";
-damero[0][1] = "stone";
-damero[0][9] = "stone";
+// damero[1][0] = "stone";
+// damero[0][1] = "stone";
+// damero[0][9] = "stone";
 
 //
 var string = "ffflffrrbbbf";
 var actions = string.toLowerCase().split("");
-
+//Este loop identifica los valores dentro del array actions[] y ejecuta las funciones asociadas a esos valores guradados (como keys) en el objeto moveFunctions{}
 for(var i = 0; i < actions.length; i++){
   var orden = actions[i];
   moveFunctions[orden](myRover);
 }
 
 
-function crash(damero){
-  if (damero[myRover.position[0], myRover.position[1]] == "stone" ) {
-    console.log("watch out you hit a " + damero)
-  } else{
-    console.log("you are in position " + damero)
-  }
-}
+// function crash(damero){
+//   if (damero[myRover.position[0], myRover.position[1]] == "stone" ) {
+//     console.log("watch out you hit a " + damero)
+//   } else{
+//     console.log("you are in position " + damero)
+//   }
+// }
 
 
 
